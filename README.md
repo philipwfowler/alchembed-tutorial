@@ -27,7 +27,7 @@ As in the paper, all the simulations are performed in [GROMACS](http://www.groma
 
 ## Instructions
 
-All the [GROMACS](http://www.gromacs.org) commands have been stored in a bash script, `try-alchembed.sh`, that is in the root of this repository. All of the files required for the simulations are stored in the common-files/ directory. The five test proteins are referred to using these slightly shortened names ['nbar','pla2','cox1','kcsa','ompf'] and the forcefield is specified as one of ['at','cg'].
+All the [GROMACS](http://www.gromacs.org) commands have been stored in a bash script, `try-alchembed.sh`, that is in the root of this repository. All of the files required for the simulations are stored in the `common-files/` directory. The five test proteins are referred to using these slightly shortened names ['nbar','pla2','cox1','kcsa','ompf'] and the forcefield is specified as one of ['at','cg'].
 
 Take for example the 'nbar' protein in a 'cg' representation. 
 
@@ -35,7 +35,7 @@ Take for example the 'nbar' protein in a 'cg' representation.
     common-files/nbar-cg.itp common-files/nbar-cg.pdb
     common-files/nbar-cg.ndx common-files/nbar-cg.top
  
-There are four files in common-files/ specific to this protein/forcefield combination. (The atomistic simulations have a fifth file that foo-at_posre.itp that specifies which protein atoms to position restrain during the simulation). The PDB file contains the intial coordinates of the lipids, protein and water. Please visualise this using [VMD](http://www.ks.uiuc.edu/Research/vmd/)/PyMol/Chimera to satisfy yourself that many of the protein and lipid beads clash. To provide a more stringent test you could also move the protein relative to the bilayer, rather than use the conformation provided. The NDX file is contains the index groups; these are referred to in the MDP file (see below). Finally the TOP file specifies the composition of the system and the location of the ITP files (including the protein one listed above) which describe the connectivity of the different molecules.
+There are four files in `common-files/` specific to this protein/forcefield combination. (The atomistic simulations have a fifth file that `foo-at_posre.itp` that specifies which protein atoms to position restrain during the simulation). The PDB file contains the intial coordinates of the lipids, protein and water. Please visualise this using [VMD](http://www.ks.uiuc.edu/Research/vmd/)/PyMol/Chimera to satisfy yourself that many of the protein and lipid beads clash. To provide a more stringent test you could also move the protein relative to the bilayer, rather than use the conformation provided. The NDX file is contains the index groups; these are referred to in the MDP file (see below). Finally the TOP file specifies the composition of the system and the location of the ITP files (including the protein one listed above) which describe the connectivity of the different molecules.
 
 The *ALCHEMBED* process has two steps; the first is a short energy minimisation. The run parameters for this are specified in 
 
@@ -43,7 +43,7 @@ The *ALCHEMBED* process has two steps; the first is a short energy minimisation.
 
 The second step is a short 1000 step [GROMACS](http://www.gromacs.org) MD simulation where the van der Waals interaction between the protein and the rest of the system is described by a soft-core van der Waals potential. The strength of this interaction is described by the coupling parameter, lambda. Initially, lambda is zero and there are no forces between the protein and the rest of the system. Here lambda increases by 0.001 for 1000 steps, thereby smoothly "turning on" the interactions between the protein and the rest of the system. During this process the position of the protein beads (or atoms) are restrained and as lambda increases the lipid beads (or atoms) move out of the space occupied by the protein.
 
-The `try-alchembed.sh` script takes two arguments. The name of the protein (taken from the list above) and the forcefield. Hence to run it type
+The `try-alchembed.sh` script takes two arguments (the script is commented also). The name of the protein (taken from the list above) and the forcefield. Hence to run it type
 
     ./try-alchembed.sh nbar cg
 
