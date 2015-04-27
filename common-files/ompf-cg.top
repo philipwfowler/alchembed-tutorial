@@ -1,0 +1,17 @@
+#include "martini_v2.2.itp"
+#include "martini_v2.2_aminoacids.itp"
+#include "martini_v2.0_lipids.itp"
+    
+#define RUBBER_BANDS
+
+#include "ompf-cg.itp"
+
+[ system ]
+; name
+OmpF alchembed test case
+
+[ molecules ]
+; name     number
+POPC       377
+PROTEIN    3
+W		   4434

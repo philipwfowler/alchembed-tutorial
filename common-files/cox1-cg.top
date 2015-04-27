@@ -1,0 +1,17 @@
+#include "martini_v2.2.itp"
+#include "martini_v2.2_aminoacids.itp"
+#include "martini_v2.0_lipids.itp"
+    
+#define RUBBER_BANDS
+
+#include "cox1-cg.itp"
+
+[ system ]
+; name
+Alchembed test case
+
+[ molecules ]
+; name     number
+POPC       512
+PROTEIN    1
+W   9689

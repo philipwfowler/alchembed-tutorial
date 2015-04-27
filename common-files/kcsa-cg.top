@@ -1,0 +1,17 @@
+#include "martini_v2.2.itp"
+#include "martini_v2.2_aminoacids.itp"
+#include "martini_v2.0_lipids.itp"
+    
+#define RUBBER_BANDS
+
+#include "kcsa-cg.itp"
+
+[ system ]
+; name
+Alchembed test case
+
+[ molecules ]
+; name     number
+POPC       467
+PROTEIN    4
+W   4473
