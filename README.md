@@ -41,9 +41,13 @@ The *ALCHEMBED* process has two steps; the first is a short energy minimisation.
 
     less common-files/em-cg.mdp
 
-The second step is a short 1000 step [GROMACS](http://www.gromacs.org) MD simulation where the van der Waals interaction between the protein and the rest of the system is described by a soft-core van der Waals potential. The strength of this interaction is described by the coupling parameter, lambda. Initially, lambda is zero and there are no forces between the protein and the rest of the system. Here lambda increases by 0.001 for 1000 steps, thereby smoothly "turning on" the interactions between the protein and the rest of the system. During this process the position of the protein beads (or atoms) are restrained and as lambda increases the lipid beads (or atoms) move out of the space occupied by the protein.
+The second step is a short 1000 step [GROMACS](http://www.gromacs.org) MD simulation where the van der Waals interaction between the protein and the rest of the system is described by a soft-core van der Waals potential. The run parameters for this are here
 
-The `try-alchembed.sh` script takes two arguments (the script is commented also). The name of the protein (taken from the list above) and the forcefield. Hence to run it type
+    less common-files/alchembed-cg.mdp
+    
+The strength of the (soft-core) van der Waals interaction between the protein and the rest of the system is described by a coupling parameter, lambda. Initially, lambda is zero and there are no forces between the protein and the rest of the system. Here lambda increases by 0.001 for 1000 steps, thereby smoothly "turning on" the interactions between the protein and the rest of the system. During this process the position of the protein beads (or atoms) are restrained and as lambda increases the lipid beads (or atoms) move out of the space occupied by the protein.
+
+The `try-alchembed.sh` script takes two arguments (the script is commented also if you'd like to look inside). The name of the protein (taken from the list above) and the forcefield. Hence to run it type
 
     ./try-alchembed.sh nbar cg
 
