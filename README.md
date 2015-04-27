@@ -2,7 +2,7 @@
 
 ## Objective
 
-To demonstrate how the ALCHEMBED method can embed different membrane proteins into lipid bilayers. 
+To demonstrate how the `ALCHEMBED` method can embed different membrane proteins into lipid bilayers. 
 
 ## Citing 
 
@@ -14,13 +14,13 @@ title = {{Alchembed : A computational method for incorporating multiple proteins
 year = {2015}
 }
 
-and allows the user to embed the five different membrane proteins shown in Figure 3 into a simple lipid bilayer comprising 512 POPC lipids. As in the paper, each protein can be embedded using either a fully-atomistic forcefield (CHARMM27) or a coarse-grained forcefield (MARTINI2.2).
+and allows the user to embed the five different membrane proteins shown in Figure 3 into a simple lipid bilayer comprising 512 POPC lipids. As in the paper, each protein can be embedded using either a fully-atomistic forcefield ([CHARMM27](http://www.gromacs.org/Documentation/Terminology/Force_Fields/CHARMM)) or a coarse-grained forcefield ([MARTINI2.2](http://md.chem.rug.nl/cgmartini/)).
 
 If you use this tutorial please cite the above paper in your work.
 
 ## Pre-requisites
 
-As in the paper, all the simulations are performed in GROMACS, although in principle the method should work equally well in AMBER, NAMD or CHARMM since all these codes include van der Waals soft-core functionality.
+As in the paper, all the simulations are performed in [GROMACS](http://www.gromacs.org), although in principle the method should work equally well in AMBER, NAMD or CHARMM since all these codes include van der Waals soft-core functionality.
 
 - GROMACS 5.0.X or later. This will include the CHARMM27 forcefield files.
 - VMD 1.9.X or later if you wish to visualise the resulting trajectories.
