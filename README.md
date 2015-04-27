@@ -2,7 +2,7 @@
 
 ## Objective
 
-To demonstrate how the `ALCHEMBED` method can embed different membrane proteins into lipid bilayers. 
+To demonstrate how the *ALCHEMBED* method can embed different membrane proteins into lipid bilayers. 
 
 ## Citing 
 
@@ -27,7 +27,7 @@ As in the paper, all the simulations are performed in [GROMACS](http://www.groma
 
 ## Instructions
 
-All the [GROMACS](http://www.gromacs.org) commands have been stored in a bash script, try-alchembed.sh, that is in the root of this repository. All of the files required for the simulations are stored in the common-files/ directory. The five test proteins are referred to using these slightly shortened names ['nbar','pla2','cox1','kcsa','ompf'] and the forcefield is specified as one of ['at','cg'].
+All the [GROMACS](http://www.gromacs.org) commands have been stored in a bash script, `try-alchembed.sh`, that is in the root of this repository. All of the files required for the simulations are stored in the common-files/ directory. The five test proteins are referred to using these slightly shortened names ['nbar','pla2','cox1','kcsa','ompf'] and the forcefield is specified as one of ['at','cg'].
 
 Take for example the 'nbar' protein in a 'cg' representation. 
 
@@ -37,19 +37,19 @@ Take for example the 'nbar' protein in a 'cg' representation.
  
 There are four files in common-files/ specific to this protein/forcefield combination. (The atomistic simulations have a fifth file that foo-at_posre.itp that specifies which protein atoms to position restrain during the simulation). The PDB file contains the intial coordinates of the lipids, protein and water. Please visualise this using [VMD](http://www.ks.uiuc.edu/Research/vmd/)/PyMol/Chimera to satisfy yourself that many of the protein and lipid beads clash. To provide a more stringent test you could also move the protein relative to the bilayer, rather than use the conformation provided. The NDX file is contains the index groups; these are referred to in the MDP file (see below). Finally the TOP file specifies the composition of the system and the location of the ITP files (including the protein one listed above) which describe the connectivity of the different molecules.
 
-The ALCHEMBED process has two steps; the first is a short energy minimisation. The run parameters for this are specified in 
+The *ALCHEMBED* process has two steps; the first is a short energy minimisation. The run parameters for this are specified in 
 
     less common-files/em-cg.mdp
 
 The second step is a short 1000 step [GROMACS](http://www.gromacs.org) MD simulation where the van der Waals interaction between the protein and the rest of the system is described by a soft-core van der Waals potential. The strength of this interaction is described by the coupling parameter, lambda. Initially, lambda is zero and there are no forces between the protein and the rest of the system. Here lambda increases by 0.001 for 1000 steps, thereby smoothly "turning on" the interactions between the protein and the rest of the system. During this process the position of the protein beads (or atoms) are restrained and as lambda increases the lipid beads (or atoms) move out of the space occupied by the protein.
 
-The try-alchembed.sh script takes two arguments. The name of the protein (taken from the list above) and the forcefield. Hence to run it type
+The `try-alchembed.sh` script takes two arguments. The name of the protein (taken from the list above) and the forcefield. Hence to run it type
 
     ./try-alchembed.sh nbar cg
 
-and assuming you have [GROMACS](http://www.gromacs.org) in your $PATH etc, then it should perform the short energy minimisation and then the embedding simulation. On a single core of at Intel Xeon E5 processor (2013) this took 13 seconds. The larger proteins and the atomistic cases will take longer (nbar at took around 15 min on the same processor).
+and assuming you have [GROMACS](http://www.gromacs.org) in your `$PATH` etc, then it should perform the short energy minimisation and then the embedding simulation. On a single core of at Intel Xeon E5 processor (c. 2014) this took 13 seconds. The larger proteins and the atomistic cases will take longer (nbar at took around 15 min on the same processor).
 
-All the regular [GROMACS](http://www.gromacs.org) output files are stored in protein/forcefield/, i.e. nbar/cg/ in this case (the script automatically creates the directory if it doesn't exist). The files ending in -em are from the energy minimisation run and those ending in -alchembed are from the embedding run. Hence to examine the result of the above short run,
+All the regular [GROMACS](http://www.gromacs.org) output files are stored in `protein/forcefield/`, i.e. `nbar/cg/` in this case (the script automatically creates the directory if it doesn't exist). The files ending in `-em` are from the energy minimisation run and those ending in `-alchembed` are from the embedding run. Hence to examine the result of the above short run,
 
     cd nbar/cg/
     ls
@@ -69,7 +69,7 @@ and then check "Update Selection Every Frame" under the "Trajectory" tab. For CG
 
     resname W POPC and within 4.7 of (not resname W POPC)
 
-Also, you will need to remove the jumps across the periodic boundary conditions in any AT sim via trjconv, which is part of the [GROMACS](http://www.gromacs.org) packages so should be in your $PATH. For example, for nbar at
+Also, you will need to remove the jumps across the periodic boundary conditions in any AT sim via `trjconv`, which is part of the [GROMACS](http://www.gromacs.org) packages so should be in your $PATH. For example, for nbar at
 
     trjconv -f nbar-at-alchembed.xtc -s nbar-at-alchembed.tpr -pbc mol -o nbar-at-alchembed-nojump.xtc
  
@@ -79,7 +79,7 @@ then load this XTC file into [VMD](http://www.ks.uiuc.edu/Research/vmd/) instead
 
 ## Extensions
 
-To further convince yourself that the ALCHEMBED process has successfully embedded the test proteins into the POPC bilayer, you could use the final GRO file (e.g. nbar-cg-alchembed.gro) to start a standard MD NpT simulation.
+To further convince yourself that the *ALCHEMBED* process has successfully embedded the test proteins into the POPC bilayer, you could use the final GRO file (e.g. `nbar-cg-alchembed.gro`) to start a standard MD NpT simulation.
 
 
 
