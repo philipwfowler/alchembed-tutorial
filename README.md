@@ -1,10 +1,21 @@
 # An ALCHEMBED tutorial.
 
+## Pre-release notes (to be modified)
+
+One can obtain this tutorial from two places.
+
+1. As a tarball as part of the Supplementary Information of the *ALCHEMBED* paper. This version is therefore easier to find and will be maintained indefinitely, but will not evolve with time.
+2. As an open GitHub repository. Changes will be made to this repository with time to reflect e.g. changes in GROMACS functionality. To obtain the repository, assuming you have git installed, issue
+
+    git clone https://github.com/philipwfowler/alchembed-tutorial.git 
+
+which will create a directory called `alchembed-tutorial` and download the files.
+
 ## Objective
 
 To demonstrate how the *ALCHEMBED* method can embed different membrane proteins into lipid bilayers. 
 
-## Citing 
+## Citing (to be modified)
 
 This tutorial accompanies the following paper
 
