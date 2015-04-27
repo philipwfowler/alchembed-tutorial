@@ -8,11 +8,11 @@ To demonstrate how the *ALCHEMBED* method can embed different membrane proteins 
 
 This tutorial accompanies the following paper
 
-@article{Jefferys2015,
-author = {Jefferys, Elizabeth and Sands, Zara A and Shi, Jiye and Sansom, Mark S P and Fowler, W},
-title = {{Alchembed : A computational method for incorporating multiple proteins into complex lipid geometries .}},
-year = {2015}
-}
+    @article{Jefferys2015,
+    author = {Jefferys, Elizabeth and Sands, Zara A and Shi, Jiye and Sansom, Mark S P and Fowler, W},
+    title = {{Alchembed : A computational method for incorporating multiple proteins into complex lipid geometries .}},
+    year = {2015}
+    }
 
 and allows the user to embed the five different membrane proteins shown in Figure 3 into a simple lipid bilayer comprising 512 POPC lipids. As in the paper, each protein can be embedded using either a fully-atomistic forcefield ([CHARMM27](http://www.gromacs.org/Documentation/Terminology/Force_Fields/CHARMM)) or a coarse-grained forcefield ([MARTINI2.2](http://md.chem.rug.nl/cgmartini/)).
 
