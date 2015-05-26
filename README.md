@@ -4,7 +4,7 @@
 
 One can obtain this tutorial from two places.
 
-1. As a tarball as part of the Supplementary Information of the *ALCHEMBED* paper. This version is therefore easier to find and will be maintained indefinitely, but will not evolve with time. The paper and supporting information is availaible from here: [doi:10.1021/ct501111d][http://dx.doi.org/10.1021/ct501111d]
+1. As a tarball as part of the Supplementary Information of the *ALCHEMBED* paper. This version is therefore easier to find and will be maintained indefinitely, but will not evolve with time. The paper and supporting information is availaible from here: [doi:10.1021/ct501111d](http://dx.doi.org/10.1021/ct501111d)
 2. As an open GitHub repository. Changes will be made to this repository with time to reflect e.g. changes in GROMACS functionality. 
 
 To obtain the repository, assuming you have git installed, issue. 
