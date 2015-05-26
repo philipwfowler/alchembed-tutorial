@@ -1,10 +1,10 @@
 # An ALCHEMBED tutorial.
 
-## Pre-release notes (to be modified)
+## Release notes
 
 One can obtain this tutorial from two places.
 
-1. As a tarball as part of the Supplementary Information of the *ALCHEMBED* paper. This version is therefore easier to find and will be maintained indefinitely, but will not evolve with time.
+1. As a tarball as part of the Supplementary Information of the *ALCHEMBED* paper. This version is therefore easier to find and will be maintained indefinitely, but will not evolve with time. The paper and supporting information is availaible from here: [doi:10.1021/ct501111d][http://dx.doi.org/10.1021/ct501111d]
 2. As an open GitHub repository. Changes will be made to this repository with time to reflect e.g. changes in GROMACS functionality. 
 
 To obtain the repository, assuming you have git installed, issue. 
@@ -24,6 +24,7 @@ This tutorial accompanies the following paper
     @article{Jefferys2015,
     author = {Jefferys, Elizabeth and Sands, Zara A and Shi, Jiye and Sansom, Mark S P and Fowler, W},
     title = {{Alchembed : A computational method for incorporating multiple proteins into complex lipid geometries .}},
+    doi = {10.1021/ct501111d},
     year = {2015}
     }
 
