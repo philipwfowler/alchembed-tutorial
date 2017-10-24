@@ -17,13 +17,16 @@ which will create a directory called `alchembed-tutorial` and download the files
 
 To demonstrate how the *ALCHEMBED* method can embed different membrane proteins into lipid bilayers. 
 
-## Citing (to be modified)
+## Citing
 
 This tutorial accompanies the following paper
 
     @article{Jefferys2015,
     author = {Jefferys, Elizabeth and Sands, Zara A and Shi, Jiye and Sansom, Mark S P and Fowler, W},
     title = {{Alchembed : A computational method for incorporating multiple proteins into complex lipid geometries .}},
+    journal = {J Chem Theo Comp},
+    volume = {11},
+    pages = {2743–2754},
     doi = {10.1021/ct501111d},
     year = {2015}
     }
